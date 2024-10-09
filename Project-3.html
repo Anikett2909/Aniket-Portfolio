@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UX For Rural India</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', 'Poppins', 'Lancelot', sans-serif;
+            background-color: #050505;
+            color: #fff;
+            background-image: url(BG\ Image.png);
+        }
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 28px 50px 112px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font: 13px 'Inter', sans-serif;
+            position: fixed;
+            background-color: rgba(0, 0, 0, 0.8);
+            width: 1650px;
+            height: 82.51px;
+            margin-top: -30px;
+        }
+        .logo {
+            object-fit: contain;
+            object-position: center;
+            width: 63px;
+            margin-left: 100px;
+        }
+        .nav {
+            display: flex;
+            gap: 29px;
+            align-items: center;
+            margin-right: 250px;
+        }
+        .nav-item {
+            color: #8e95a2;
+            text-decoration: none;
+        }
+        .nav-item.active {
+            color: #fff;
+            font-weight: 700;
+        }
+        .cta-button {
+            background-color: #fff;
+            color: #050611;
+            margin-top: 10px;
+            padding: 5px 30px;
+            height: 15px;
+            width: 35px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .main-title {
+            color: #fff;
+            text-align: left;
+            align-self: flex-start;
+            margin: 114px 0 0 95px;
+            font: 400 69px Lancelot, sans-serif;
+        }
+        .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            align-self: flex-start;
+            margin: 20px 0 0 95px;
+            font: 400 34px Lancelot, sans-serif;
+        }
+        .divider {
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.6);
+            margin: 0 0 85px;
+            margin-top: 60px;
+        }
+        .content-grid {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            margin-bottom: 172px;
+        }
+        .overview-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 29px;
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+        .overview-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 23px;
+            font-weight: 500;
+            color: #979797;
+        }
+        .project-details {
+            display: flex;
+            flex-direction: column;
+            align-self: stretch;
+            align-items: flex-start;
+            color: #f6f6f6;
+            margin: auto 0;
+            font: 600 19px Poppins, sans-serif;
+        }
+        .detail-label {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .detail-value {
+            font-size: 23px;
+            font-weight: 500;
+            color: #979797;
+            align-self: stretch;
+            margin-top: 7px;
+        }
+        .image-placeholder {
+            width: 1023px;
+            height: 1726px;
+            background-color: #fff;
+            align-items: center;
+            margin-left: 200px;
+        }
+        .image-placeholder-2 {
+            width: 1023px;
+            height: 2301.75px;
+            align-items: center;
+            margin-left: 200px;
+        }
+        .image-placeholder-3 {
+            width: 1023px;
+            height: 1722.5px;
+            margin-bottom: 86px;
+            margin-left: 200px;
+        }
+        .cta-research {
+            background-color: #fff;
+            margin: 27px auto 0;
+            color: #333;
+            text-align: center;
+            letter-spacing: 1.08px;
+            padding: 10px 19px;
+            font: 600 23px 'Poppins', sans-serif;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            margin-left: 530px;
+            margin-bottom: 50px;
+            border-radius: 10px;
+        }
+        .footer {
+            border-top: 1px solid #fff;
+            padding-top: 70px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer-info {
+            max-width: 42%;
+        }
+        .footer-name {
+            font-family: 'Poppins', sans-serif;
+            font-size: 30px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .footer-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 23px;
+            font-weight: 500;
+            color: #979797;
+            margin-bottom: 14px;
+        }
+        .social-links {
+            display: flex;
+            gap: 8px;
+        }
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .footer-cta {
+            max-width: 58%;
+        }
+        .footer-cta-text {
+            font-family: 'Lancelot', serif;
+            font-size: 53px;
+            margin-bottom: 29px;
+        }
+        .footer-cta-button {
+            align-self: start;
+            background-color: #fff;
+            margin-top: 40px;
+            color: #050611;
+            letter-spacing: -0.4px;
+            padding: 15px 47px;
+            font: 500 23px 'Inter', sans-serif;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            margin-top: -20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <img src="Group 1010107354.png" alt="Company Logo" class="logo">
+            <nav class="nav">
+                <a href="Index.html" class="nav-item">Home</a>
+                <a href="About.html" class="nav-item active">About</a>
+                <a href="Resume Aniket Bhuse.pdf" class="nav-item">Resume</a>
+                <a href="mailto: aniketbhusee@gmail.com" class="cta-button">Email</a>
+            </nav>
+        </header>
+        <main>
+            <h1 class="main-title">UX For Rural India</h1>
+            <p class="subtitle">Investigate and analyze the socio-economic, environmental, and health impacts in Village.</p>
+            <hr class="divider">
+            <div class="content-grid">
+                <div class="overview">
+                    <h2 class="overview-title">Overview</h2>
+                    <p class="overview-text">Smart Fitness mirrors represent a revolutionary advancement in the integration of technology and everyday objects. I focused on understanding the challenges people face with traditional workouts and gym routines. From there, I developed features like voice control, touchscreens, and sensors to ensure the smart mirrors are not only functional but also enjoyable to use.</p>
+                </div>
+                <div class="project-details">
+                    <h3 class="detail-label">ROLE</h3>
+                    <p class="detail-value">UX Designer</p>
+                    <h3 class="detail-label">TOOLS</h3>
+                    <p class="detail-value">Figma</p>
+                    <h3 class="detail-label">TIMELINE</h3>
+                    <p class="detail-value">April - May 2024</p>
+                </div>
+            </div>
+            <div class="image-placeholder" role="img" aria-label="Project image 1"><img src="P1.png" alt=""></div>
+            <div class="image-placeholder-2" role="img" aria-label="Project image 2" style="background-color: #a5a5a5;"><img src="p2.png" alt=""></div>
+            <div class="image-placeholder-3" role="img" aria-label="Project image 3" style="background-color: #313131;"><img src="p3.png" alt=""></div>
+            <a href="https://drive.google.com/drive/folders/1o2MMvC1VPmDGEjvbHldCDeKmMBeZiJkb" class="cta-research">View Research Paper</a>
+        </main>
+        <footer class="footer">
+            <div class="footer-info">
+                <h2 class="footer-name">Aniket Bhuse</h2>
+                <p class="footer-title">UI/UX Designer | Graphic Designer</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/aniket-bhuse-716991225/" class="social-icon" aria-label="Social Media Link 1">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/438f6acac42fc3eb876c948cc0ef7578c8481c0cb23f7556c2672bc9eb74bee3?placeholderIfAbsent=true&apiKey=65ddaad267764ada81bf38231524b707" alt="" width="30" height="30">
+                    </a>
+                    <a href="https://www.instagram.com/illustrationbyaniket" class="social-icon" aria-label="Social Media Link 2">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bc06f953e3dd1d7e71c791ed79d7e12eebe44757affa50e5280c75040a52b30b?placeholderIfAbsent=true&apiKey=65ddaad267764ada81bf38231524b707" alt="" width="30" height="30">
+                    </a>
+                    <a href="https://medium.com/@aniketbhusee" class="social-icon" aria-label="Social Media Link 3">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1ea4cc84b9048e7d45794c604cbc380d0ce2b3183f97aa958b951b6c6d1de5fa?placeholderIfAbsent=true&apiKey=65ddaad267764ada81bf38231524b707" alt="" width="30" height="30">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-cta">
+                <p class="footer-cta-text">If you like what you see, let's<br><span style="background-color: #4A4D30;">work together</span></p>
+                <a href="mailto: aniketbhusee@gmail.com" class="footer-cta-button">Email me</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
